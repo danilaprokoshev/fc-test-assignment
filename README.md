@@ -6,7 +6,11 @@
 ## Getting Started
 
 1. Clone the repository or download ZIP
-2. In the root directory: ```$ npm run build```
+2. In the root directory: 
+
+   ```$ npm install``` 
+
+   ```$ npm run build```
 3. To run application: ```$ npm run start```
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
