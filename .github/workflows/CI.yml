@@ -27,7 +27,7 @@ jobs:
         npm install
     - name: Run linter
       run: |
-        next lint
+        npm run lint
     - name: Build
       run: |
         npm run build
