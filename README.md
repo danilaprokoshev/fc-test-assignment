@@ -1,5 +1,5 @@
 # Focus Calendar test case
-[![Actions Status](https://github.com/danilaprokoshev/monite-test-assignment/workflows/CI/badge.svg)](https://github.com/danilaprokoshev/monite-test-assignment/actions)
+[![Actions Status](https://github.com/danilaprokoshev/fc-test-assignment/workflows/CI/badge.svg)](https://github.com/danilaprokoshev/fc-test-assignment/actions)
 
 ### This small project (NextJS => React + TypeScript + SSR) is as test assignment
 
