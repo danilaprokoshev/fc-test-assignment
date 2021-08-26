@@ -10,6 +10,12 @@ export const globalStyles = (
         src: url("../public/fonts/Inter-Regular.woff2") format('woff2');
       }
 
+      @font-face {
+        font-weight: 700;
+        font-family: "Inter";
+        src: url("../public/fonts/Inter-Bold.woff2") format('woff2');
+      }
+
       html,
       body {
         display: flex;
@@ -25,6 +31,7 @@ export const globalStyles = (
 
       section {
         display: flex;
+        justify-content: center;
 
         width: 700px;
       }
@@ -43,6 +50,10 @@ export const globalStyles = (
         white-space: nowrap;
         text-overflow: ellipsis;
       }
+
+      .default-font {
+        font-family: "Inter", sans-serif;
+      }
     `}
   />
 )
@@ -58,8 +69,8 @@ export const Button = styled('button')`
   text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: ${(props) => props.className === 'active' ? '#fff' : 'black'};
-  background-color: ${(props) => props.className === 'active' ? '#4C4C55' : '#fff'};
+  color: ${(props) => props.className === 'active default-font' ? '#fff' : 'black'};
+  background-color: ${(props) => props.className === 'active default-font' ? '#4C4C55' : '#fff'};
   font-size: 24px;
   border-radius: 10px;
   border: 0;
