@@ -1,12 +1,11 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import Canvas from '../components/Canvas';
 import styled from '@emotion/styled';
 import { Button } from '../styles/styles.js';
 import { GetServerSideProps } from 'next';
 import { getTimezones } from '../lib/timezones';
 import { getEvents } from '../lib/events';
 import { useState } from 'react';
+import CustomCanvas from "../components/CustomCanvas";
 
 type Offset = {
   hours: number;
@@ -28,7 +27,6 @@ type AppProps = {
   timezones: Timezone[];
   events: Event[];
 };
-
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const timezones = getTimezones();
@@ -74,7 +72,7 @@ const Home = ({ timezones, events }: AppProps) => {
                 const chosen = timezone === currentTimezone;
                 if (chosen) {
                   return (
-                    <Button className="active"
+                    <Button className="active default-font"
                             key={timezone}
                             onClick={() => setCurrentTimezone(timezone)}>
                       {timezone}
@@ -83,8 +81,10 @@ const Home = ({ timezones, events }: AppProps) => {
                 }
 
                 return (
-                  <Button key={timezone}
-                          onClick={() => setCurrentTimezone(timezone)}>
+                  <Button
+                    className="default-font"
+                    key={timezone}
+                    onClick={() => setCurrentTimezone(timezone)}>
                     {timezone}
                   </Button>
                 )
@@ -96,7 +96,7 @@ const Home = ({ timezones, events }: AppProps) => {
                 const chosen = id === currentEventId;
                 if (chosen) {
                   return (
-                    <Button className="active"
+                    <Button className="active default-font"
                             key={id}
                             onClick={() => setCurrentEventId(id)}>
                       {summary}
@@ -106,6 +106,7 @@ const Home = ({ timezones, events }: AppProps) => {
 
                 return (
                   <Button
+                    className="default-font"
                     key={id}
                     onClick={() => setCurrentEventId(id)}>
                     {summary}
@@ -116,11 +117,10 @@ const Home = ({ timezones, events }: AppProps) => {
           </EventsContainer>
         </section>
         <section>
-          <Canvas
-            timezones={timezones}
-            events={events}
-            currentTimezone={currentTimezone}
-            currentEventId={currentEventId}
+          <CustomCanvas timezones={timezones}
+                        events={events}
+                        currentTimezone={currentTimezone}
+                        currentEventId={currentEventId}
           />
         </section>
       </main>
