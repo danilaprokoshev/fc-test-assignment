@@ -116,7 +116,7 @@ const Home = ({ timezones, events }: AppProps) => {
             )}
           </EventsContainer>
         </section>
-        <section>
+        <section className="canvas-container">
           <CustomCanvas timezones={timezones}
                         events={events}
                         currentTimezone={currentTimezone}

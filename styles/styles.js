@@ -36,6 +36,13 @@ export const globalStyles = (
         width: 700px;
       }
 
+      .canvas-container {
+        box-sizing: border-box;
+        margin-top: 30px;
+
+        border: 2px solid lightgray;
+      }
+
       .name-time,
       .name-event {
         margin: 2px 5px;
